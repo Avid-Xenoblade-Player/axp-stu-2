@@ -16,38 +16,40 @@
 			<div class="narration">
 				{{ content }}
 			</div>
-					{% assign story_pages = site.pages | sort: "path" %}
-			{% assign found_current = false %}
-			{% assign next_page = nil %}
+<!-- AUTOMATIC NEXT PAGE LOGIC -->
+{% assign story_pages = site.pages | sort: "path" %}
+{% assign found_current = false %}
+{% assign next_page = nil %}
 
-			{% for p in story_pages %}
-				{% if p.path contains "story/" %}
-					{% if found_current == true %}
-						{% assign next_page = p %}
-						{% break %}
-					{% endif %}
-					{% if p.url == page.url %}
-						{% assign found_current = true %}
-					{% endif %}
-				{% endif %}
-			{% endfor %}
-
-			<!-- Fallback for homepage to link to the very first story file -->
-			{% if page.url == "/" or page.url == "/index.html" %}
-				{% for p in story_pages %}
-					{% if p.path contains "story/" %}
-						{% assign next_page = p %}
-						{% break %}
-					{% endif %}
-				{% endfor %}
+<!-- If we are on the Root Homepage, target the very first story file -->
+{% if page.url == "/" or page.url == "/index.html" %}
+	{% for p in story_pages %}
+		{% if p.path contains "story/" %}
+			{% assign next_page = p %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
+{% else %}
+	<!-- If we are inside the story folder, proceed sequentially -->
+	{% for p in story_pages %}
+		{% if p.path contains "story/" %}
+			{% if found_current == true %}
+				{% assign next_page = p %}
+				{% break %}
 			{% endif %}
-
-			{% if next_page %}
-				<a class="command-link" href="{{ next_page.url | relative_url }}"> {{ next_page.title }}</a>
+			{% if p.url == page.url %}
+				{% assign found_current = true %}
 			{% endif %}
+		{% endif %}
+	{% endfor %}
+{% endif %}
+
+{% if next_page %}
+	<a class="command-link" href="{{ next_page.url | relative_url }}">{{ next_page.title }}</a>
+{% endif %}
+		
 		</div>
 
-		
 		
 		</div>
 		
