@@ -1,3 +1,19 @@
+@property --outline-color {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #ff0000;
+}
+
+@keyframes rainbow-stroke {
+  0%   { --outline-color: #ff0000; }
+  17%  { --outline-color: #ff7f00; }
+  33%  { --outline-color: #ffff00; }
+  50%  { --outline-color: #00ff00; }
+  67%  { --outline-color: #0000ff; }
+  83%  { --outline-color: #4b0082; }
+  100% { --outline-color: #9400d3; }
+}
+
 body {
   background-color: #550d51;
   font-family: "Atkinson Hyperlegible", Courier, monospace;
@@ -20,6 +36,12 @@ body {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.rainbow-title {
+  color: #f7ebe8;
+    -webkit-text-stroke: 2px var(--outline-color);
+  animation: rainbow-stroke 6s linear infinite;
 }
 
 .comic-panel {
