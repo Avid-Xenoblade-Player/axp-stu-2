@@ -16,9 +16,39 @@
 			<div class="narration">
 				{{ content }}
 			</div>
-			{% if page.next_page_url %}
-			<a class="command-link" href="{{ page.next_page_url | relative_url }}">{{ page.next_page_title }}</a>
+					{% assign story_pages = site.pages | sort: "path" %}
+			{% assign found_current = false %}
+			{% assign next_page = nil %}
+
+			{% for p in story_pages %}
+				{% if p.path contains "story/" %}
+					{% if found_current == true %}
+						{% assign next_page = p %}
+						{% break %}
+					{% endif %}
+					{% if p.url == page.url %}
+						{% assign found_current = true %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+
+			<!-- Fallback for homepage to link to the very first story file -->
+			{% if page.url == "/" or page.url == "/index.html" %}
+				{% for p in story_pages %}
+					{% if p.path contains "story/" %}
+						{% assign next_page = p %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
 			{% endif %}
+
+			{% if next_page %}
+				<a class="command-link" href="{{ next_page.url | relative_url }}"> {{ next_page.title }}</a>
+			{% endif %}
+		</div>
+
+		
+		
 		</div>
 		
     <!-- INPUT TERMINAL -->
