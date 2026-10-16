@@ -1,6 +1,0 @@
-title: "comic"
-description: "comic"
-url: "https://avid-xenoblade-player.github.io"
-
-plugins:
-  - jekyll-feed
