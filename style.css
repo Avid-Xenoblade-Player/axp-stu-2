@@ -105,6 +105,7 @@ body {
 .pesterlog {
   background-color: #efefef;
   border: 3px double #626262;
+  border-top: none;
   padding: 12px 16px;
   margin: 20px auto;
   font-family: "Atkinson Hyperlegible", Courier, monospace;
@@ -112,7 +113,30 @@ body {
   font-weight: bold;
   text-align: left;
   max-width: 600px;
+  display: none;
 }
+
+.pesterlog.open {
+    display: block;
+}
+
+.pesterlog-toggle {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto 0 auto;
+    padding: 8px;
+    background-color: #efefef;
+    border: 3px double #626262;
+    font-family: "Atkinson Hyperlegible", Courier, monospace;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
 
   blockquote.pesterlog {
     margin-left: auto;
@@ -127,6 +151,8 @@ body {
 .pesterlog p[data-char="cass"], .pesterlog p[data-char="xenoHerpetoid"], .pesterlog p[data-char="xh"] {
   color: #ff7f00;
 }
+
+
 
 .pesterlog p[data-char="helpfulHabeas"], .pesterlog p[data-char="hh"] {
   color: #0080ff;
