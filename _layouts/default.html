@@ -71,4 +71,16 @@
       </iframe>
     </div>
   </body>
+	<script>
+	 document.querySelectorAll('.pesterlog').forEach(log => {
+    const button = document.createElement('button');
+    button.className = 'pesterlog-toggle';
+    button.textContent = 'Show Chemichat';
+    log.parentNode.insertBefore(button, log);
+    button.addEventListener('click', () => {
+      log.classList.toggle('open');
+      button.textContent = log.classList.contains('open') ? 'Hide Chemichat' : 'Show Chemichat';
+    });
+  });
+		</script>
 </html>
