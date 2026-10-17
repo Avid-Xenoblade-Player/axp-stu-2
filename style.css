@@ -124,6 +124,10 @@ body {
   color: #060742;
 }
 
-.pesterlog p[data-char="cass"], .pesterlog p[data-char="xenoHerpetoid"], .pesterlog p[data-char="xH"] {
+.pesterlog p[data-char="cass"], .pesterlog p[data-char="xenoHerpetoid"], .pesterlog p[data-char="xh"] {
   color: #ff7f00;
+}
+
+.pesterlog p[data-char="helpfulHabeas"], .pesterlog p[data-char="hh"] {
+  color: #0080ff;
 }
