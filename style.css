@@ -157,3 +157,7 @@ body {
 .pesterlog p[data-char="helpfulHabeas"], .pesterlog p[data-char="hh"] {
   color: #0080ff;
 }
+
+.pesterlog p[data-char="misterVampire"], .pesterlog p[data-char="mv"] {
+  color: #8080ff;
+}
