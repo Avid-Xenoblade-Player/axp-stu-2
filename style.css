@@ -143,7 +143,7 @@ body {
     margin-right: auto;
   }
 
-.pesterlog p {
+.pesterlog p, .pesterlog p[data-char="sysMes"] {
   margin: 4px 0;
   color: #060742;
 }
@@ -152,8 +152,6 @@ body {
   color: #ff7f00;
 }
 
-
-
 .pesterlog p[data-char="helpfulHabeas"], .pesterlog p[data-char="hh"] {
   color: #0080ff;
 }
@@ -161,3 +159,4 @@ body {
 .pesterlog p[data-char="misterVampire"], .pesterlog p[data-char="mv"] {
   color: #8080ff;
 }
+
