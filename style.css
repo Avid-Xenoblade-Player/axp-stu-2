@@ -111,7 +111,6 @@ body {
   font-family: "Atkinson Hyperlegible", Courier, monospace;
   font-size: 17px;
   font-weight: bold;
-  text-align: left;
   max-width: 600px;
   display: none;
 }
@@ -151,13 +150,16 @@ body {
 
 .pesterlog p[data-char="cass"], .pesterlog p[data-char="xenoHerpetoid"], .pesterlog p[data-char="xh"] {
   color: #ff7f00;
+  text-align: left;
 }
 
 .pesterlog p[data-char="helpfulHabeas"], .pesterlog p[data-char="hh"] {
   color: #0080ff;
+  text-align: left;
 }
 
 .pesterlog p[data-char="misterVampire"], .pesterlog p[data-char="mv"] {
   color: #8080ff;
+  text-align: left;
 }
 
