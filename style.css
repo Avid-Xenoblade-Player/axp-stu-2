@@ -146,6 +146,7 @@ body {
 .pesterlog p, .pesterlog p[data-char="sysMes"] {
   margin: 4px 0;
   color: #060742;
+  text-align: center;
 }
 
 .pesterlog p[data-char="cass"], .pesterlog p[data-char="xenoHerpetoid"], .pesterlog p[data-char="xh"] {
