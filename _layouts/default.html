@@ -10,8 +10,18 @@
 		/>
 	</head>
 	<body>
+		{% assign sorted_story_pages = site.html_pages | sort: "url" | reverse %}
+		{% assign most_recent_post = nil %}
+		{% for p in sorted_story_pages %}
+		{% if p.path contains "story/" %}
+		{% assign most_recent_post = p %}
+		{% break %}
+		{% endif %}
+		{% endfor %}
 	<div class="header-abc">
-		<a class="head-link" href="https://avid-xenoblade-player.github.io/axp-stu-2/feed.xml">FEED</a> • <a class="head-link" href="https://avid-xenoblade-player.github.io/axp-stu-2">HOME</a> • <a class="head-link" href="https://forms.gle/nMYTmpwCxEfjDvKC8">SUGGESTIONS</a>
+		<a class="head-link" href="https://avid-xenoblade-player.github.io/axp-stu-2/feed.xml">FEED</a> • <a class="head-link" href="https://avid-xenoblade-player.github.io/axp-stu-2">HOME</a> • {% if most_recent_post %}
+			<a class="head-link" href="{{ most_recent_post.url | relative_url }}">LATEST</a> • 
+		{% endif %} • <a class="head-link" href="https://forms.gle/nMYTmpwCxEfjDvKC8">SUGGESTIONS</a>
 	</div>
 		
 		<div class="container">
