@@ -163,3 +163,7 @@ body {
   text-align: left;
 }
 
+.pesterlog p[data-char="leo"], .pesterlog p[data-char="opulentUser"], .pesterlog p[data-char="ou"] {
+  color: #7fff80;
+  text-align: left;
+}
